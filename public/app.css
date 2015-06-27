@@ -7,6 +7,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 html,
 body,
 div,
@@ -225,6 +226,8 @@ sub {
 .colonial-stack {
   font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
 }
+/* Color Palette */
+/** From OOKB (as part of my personal vernacular, being used everywhere :) **/
 /* -----------------------------------------------------*/
 /* ------------->>> /end variables.less <<<-------------*/
 /* -----------------------------------------------------*/
@@ -247,6 +250,7 @@ sub {
   text-rendering: optimizeLegibility;
 }
 /* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ */
+.add-clearfix,
 .clearfix::after,
 .group::after {
   content: "";
@@ -647,7 +651,7 @@ header nav h2.title {
   margin-top: .5em;
   margin-bottom: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 50em) {
   .polaroid {
     margin: 0;
     max-width: none;
@@ -710,7 +714,7 @@ ul#sociallinks li.insta a {
 /* -----------------------------------------------------*/
 /* ---------------->>> /END hg.less <<<-----------------*/
 /* -----------------------------------------------------*/
-h1 {
+header h1 {
   background: transparent url('https://scontent.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/p320x320/538187_482862191773804_1305910322_n.jpg?oh=d981e77344e32d84b5f825263c5d93cc&oe=55ED90EF') center center no-repeat;
   background-size: contain;
   text-indent: 101%;
@@ -723,8 +727,8 @@ h1 {
   max-height: 320px;
   margin: 0 auto;
 }
-@media (min-width: 768px) {
-  h1 {
+@media (min-width: 50em) {
+  header h1 {
     background: transparent url('/theme/logo.png') center center no-repeat;
     background-size: contain;
     width: 80%;
@@ -735,4 +739,359 @@ h1 {
     max-height: none;
     max-width: none;
   }
+}
+/**
+  This is compiled from best practices and interesting ideas via the following:
+    - https://css-tricks.com/tips-for-creating-great-web-forms/
+    - https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms
+    - http://b2cloud.com.au/tutorial/css-tips-and-tricks-for-styling-forms/
+    - https://css-tricks.com/display-form/
+    - http://kaylarose.github.io/Glowform/
+    - http://purecss.io/forms/
+    - http://foundation.zurb.com/docs/components/forms.html
+    - http://getbootstrap.com/css/#forms
+**/
+/* styling those forms */
+form input,
+fieldset input,
+form button,
+fieldset button,
+form select,
+fieldset select,
+form textarea,
+fieldset textarea {
+  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+  font-size: inherit;
+  line-height: normal;
+}
+form .message #form-url,
+fieldset .message #form-url {
+  display: none;
+}
+#contact form input,
+#contact form button,
+#contact form select,
+#contact form textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: .25em;
+}
+form .group .group {
+  margin: 0;
+}
+form .column,
+form .columns {
+  margin-bottom: 0;
+}
+.contact-details.vcard {
+  margin-bottom: 1.5em;
+}
+@media (min-width: 50em) {
+  #contact .inner::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #contact form,
+  .contact-details.vcard {
+    float: left;
+    padding: 0 1em;
+  }
+  #contact form {
+    width: 66.66666666667%;
+  }
+  .contact-details.vcard {
+    float: left;
+    width: 33.3333333333%;
+  }
+}
+/**
+    Started with basic form stuff from Skeleton
+    and then have evolved it with stuff from GridForms and Bootstrap
+    Bam!
+**/
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"],
+input[type="subject"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea,
+select {
+  height: 2em;
+  padding: 0.5em 0.75em;
+  background-color: white;
+  border: 1px solid #848478;
+  border-radius: .25em;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+}
+/* Removes awkward default styles on some inputs for iOS */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"],
+input[type="subject"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea {
+  min-height: 4rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+input:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"],
+input[type="subject"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea:focus,
+select:focus {
+  border: 1px solid #ae8ba4;
+  outline-color: #ae8ba4;
+}
+/* help with :focus pseudo-class & outline:
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/outline
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style
+    - http://reference.sitepoint.com/css/pseudoclass-focus
+    - https://css-tricks.com/almanac/selectors/f/focus/
+*/
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+fieldset {
+  padding: 1em;
+  border: 1px solid #606767;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal;
+}
+label {
+  display: none;
+}
+/* Help Text */
+.help-block {
+  display: block;
+  margin: .5em 0 1em 0;
+  font-size: .8em;
+  color: #848478;
+}
+/*
+  Checkboxes and Radio buttons
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  -webkit-appearance: checkbox;
+  box-sizing: border-box;
+  margin: 3px 0.5ex;
+  padding: 1px;
+  cursor: auto;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+}
+/**
+  laying out the form a bit better,
+  should do this by maybe adding column classes?
+  this will have to work for now.
+**/
+.input-group {
+  display: inline-table;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+}
+.input-group > * {
+  width: auto;
+  display: table-cell;
+}
+.input-group .form-control:first-child,
+.input-group .input-group-addon:first-child,
+.input-group .input-group-btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group .form-control:last-child,
+.input-group .input-group-addon:last-child,
+.input-group .input-group-btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group .form-control:not(:first-child):not(:last-child),
+.input-group .input-group-addon:not(:first-child):not(:last-child),
+.input-group .input-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.input-group .input-group-addon {
+  padding: 0.5em 0.75em;
+  font-size: inherit;
+  line-height: 0;
+  color: #848478;
+  text-align: center;
+  background-color: #ebf1e9;
+  border: 1px solid #848478;
+  border-radius: 4px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.input-group .input-group-addon:first-child {
+  border-right: 0;
+}
+.input-group .input-group-addon:last-child {
+  border-left: 0;
+}
+/**
+  Success, warning, error, failure, etc.
+**/
+.has-success .form-control,
+.has-warning .form-control,
+.has-error .form-control {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.has-success .checkbox,
+.has-success .checkbox-inline,
+.has-success .control-label,
+.has-success .help-block,
+.has-success .radio,
+.has-success .radio-inline,
+.has-success .form-control-feedback,
+.has-success.checkbox label,
+.has-success.checkbox-inline label,
+.has-success.radio label,
+.has-success.radio-inline label {
+  color: #8ca573;
+  outline-color: #8ca573;
+}
+.has-success .form-control {
+  border-color: #8ca573;
+  outline-color: #8ca573;
+  background: #f7f9f5;
+}
+.has-warning .checkbox,
+.has-warning .checkbox-inline,
+.has-warning .control-label,
+.has-warning .help-block,
+.has-warning .radio,
+.has-warning .radio-inline,
+.has-warning .form-control-feedback,
+.has-warning.checkbox label,
+.has-warning.checkbox-inline label,
+.has-warning.radio label,
+.has-warning.radio-inline label {
+  color: #c5c065;
+  outline-color: #c5c065;
+}
+.has-warning .form-control {
+  border-color: #c5c065;
+  outline-color: #c5c065;
+  background: #fdfdf9;
+}
+.has-error .checkbox,
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .help-block,
+.has-error .radio,
+.has-error .form-control-feedback,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label {
+  color: #b75051;
+  outline-color: #b75051;
+}
+.has-error .form-control {
+  border-color: #b75051;
+  outline-color: #b75051;
+  background: #f8efef;
+}
+/* switch glyphicons to fontawesome */
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-remove::before {
+  content: "\f00d";
+}
+.glyphicon-ok::before {
+  content: "\f00c";
+}
+.glyphicon-warning-sign::before {
+  content: "\f071";
+}
+/** some other tweaks? */
+/*
+  Nice logins:
+  https://bank.simple.com/signin
+  https://www.paypal.com/signin/?country.x=US&locale.x=en_US
+  https://thenounproject.com/accounts/login/
+  https://icloud.com/
+*/
+.form-group {
+  position: relative;
+}
+.form-control-feedback {
+  position: absolute;
+  right: -1.5em;
+  top: 1em;
 }

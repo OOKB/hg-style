@@ -2,10 +2,17 @@
 /* --------------->>> variables.less <<<----------------*/
 /* -----------------------------------------------------*/
 
+@small:     768px;
+@medium:    992px;
+@large:     1200px;
+@xlarge:    1500px;
+
+@grotesque-stack: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
 .grotesque-stack {
   font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
 }
 
+@colonial-stack: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
 .colonial-stack {
   font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
 }
@@ -13,6 +20,30 @@
 .dropshadow(@size,@color) {
   box-shadow: 0 0 @size @color;
 }
+
+.transition-all(@time) {
+  transition: all @time;
+}
+
+/* Color Palette */
+/** From OOKB (as part of my personal vernacular, being used everywhere :) **/
+
+@ookb-white:         white;
+@ookb-black:         black;
+
+@ookb-pink:          rgba(236,64,121,1);
+@ookb-brown:         rgba(47,41,38,1);
+@ookb-gray:          rgba(132,132,120,1);
+@ookb-darkgray:      rgba(96,103,103,1);
+@ookb-lightgray:     rgba(194,211,186,1);
+
+@ookb-red:           rgba(183,80,81,1);
+@ookb-orange:        rgba(195,115,99,1);
+@ookb-yellow:        rgba(197,192,101,1);
+@ookb-green:         rgba(140,165,115,1);
+@ookb-blue:          rgba(157,178,176,1);
+@ookb-purple:        rgba(174,139,164,1);
+
 
 /* -----------------------------------------------------*/
 /* ------------->>> /end variables.less <<<-------------*/
