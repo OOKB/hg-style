@@ -254,7 +254,8 @@ sub {
   clear: both;
 }
 /* columnar stuff */
-#wrapper {
+#wrapper,
+.container {
   margin: 3rem auto;
   padding: 0 1rem 3rem 1rem;
   width: 100%;
@@ -302,7 +303,8 @@ sub {
     display: block;
     clear: right;
   }
-  #wrapper {
+  #wrapper,
+  .container {
     margin: 3rem auto;
     padding-bottom: 3rem;
     max-width: 75em;
@@ -400,9 +402,6 @@ body {
   padding: 0;
   width: 100%;
 }
-#wrapper > h1 {
-  display: none;
-}
 header {
   text-align: center;
 }
@@ -415,6 +414,10 @@ footer {
 }
 section {
   padding-top: 2rem;
+}
+main.container {
+  margin-top: 0;
+  padding-top: 0;
 }
 .border-top {
   border-top: 1px solid black;
@@ -451,7 +454,7 @@ li a.active {
   color: #999;
   font-weight: normal;
 }
-header hgroup h2 {
+header h2 {
   font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
   font-size: 1.25rem;
   margin: 1em 0;
@@ -522,24 +525,48 @@ header nav h2.title {
 #hero {
   padding: 0;
 }
-#hero p {
+#hero p.lead {
   color: black;
   font-size: 1.111rem;
   font-weight: bold;
   text-align: center;
   line-height: 1;
-  margin-top: 1rem;
+  margin-top: -1.5rem;
   margin-bottom: 0;
+  /**/
+  border: .2em solid;
+  padding: 2em;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: rotate(-6.25deg);
+  -moz-transform: rotate(-6.25deg);
+  -ms-transform: rotate(-6.25deg);
+  transform: rotate(-6.25deg);
+}
+#hero p.lead::before {
+  font-size: 1.111rem;
+  content: '';
+  display: block;
+  height: 110%;
+  width: 110%;
+  position: absolute;
+  top: 1em;
+  left: 1.5em;
+  z-index: -1;
+  /**/
+  background: transparent url('/theme/hg_arrow.png') right bottom no-repeat;
+  background-size: contain;
 }
 @media (min-width: 25em) and (max-width: 35em) {
-  #hero p {
+  #hero p.lead {
     max-width: 75%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media (min-width: 35em) {
-  #hero .group {
+  #hero .group,
+  #hero .grouped {
     position: absolute;
     width: 100%;
     margin: 0;
@@ -548,13 +575,14 @@ header nav h2.title {
     right: 0;
     height: 300px;
   }
-  #hero .group::before {
+  #hero .group::before,
+  #hero .grouped::before {
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
   }
-  #hero p {
+  #hero p.lead {
     color: white;
     font-size: 1.8rem;
     font-weight: bold;
@@ -565,35 +593,45 @@ header nav h2.title {
     display: inline-block;
     vertical-align: middle;
     padding: 1em;
+    max-width: 90%;
+    margin: 0 5%;
   }
 }
 @media (min-width: 40em) {
-  #hero .group {
+  #hero .group,
+  #hero .grouped {
     height: 400px;
   }
-  #hero p {
+  #hero p.lead {
     font-size: 2rem;
   }
 }
 @media (min-width: 50em) {
-  #hero .group {
+  #hero .group,
+  #hero .grouped {
     height: 475px;
   }
-  #hero p {
-    font-size: 2.667rem;
+  #hero p.lead {
+    max-width: 75%;
+    margin: 0 12.5%;
   }
 }
 @media (min-width: 60em) {
-  #hero .group {
+  #hero .group,
+  #hero .grouped {
     height: 550px;
   }
-  #hero p {
-    font-size: 3rem;
+  #hero p.lead {
+    font-size: 2.666666666rem;
   }
 }
 @media (min-width: 70em) {
-  #hero .group {
+  #hero .group,
+  #hero .grouped {
     height: 650px;
+  }
+  #hero p.lead {
+    font-size: 3rem;
   }
 }
 /* Instagram Stuff
@@ -601,8 +639,9 @@ header nav h2.title {
 .polaroid {
   border: 1px solid #ccc;
   padding: 12px;
-  margin: 0 2em;
+  margin: 0 auto;
   box-shadow: 0 0 4px #cccccc;
+  max-width: 320px;
 }
 .polaroid p {
   margin-top: .5em;
@@ -611,6 +650,7 @@ header nav h2.title {
 @media (min-width: 768px) {
   .polaroid {
     margin: 0;
+    max-width: none;
   }
 }
 /* Contact Page
