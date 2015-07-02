@@ -258,6 +258,15 @@ sub {
   clear: both;
 }
 /* columnar stuff */
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}
 #wrapper,
 .container {
   margin: 3rem auto;
@@ -265,16 +274,19 @@ sub {
   width: 100%;
 }
 .column,
-.columns {
+.columns,
+[class*='col-'] {
   margin: 0 0 2rem 0;
   padding: 0;
 }
-.group {
+.group,
+.inner {
   margin: 0 0 2rem 0;
 }
 .one,
 .two,
 .three,
+.col-sm-3,
 .four,
 .five,
 .six,
@@ -282,6 +294,7 @@ sub {
 .seven,
 .eight,
 .nine,
+.col-sm-9,
 .ten,
 .eleven,
 .twelve,
@@ -315,13 +328,21 @@ sub {
   }
   /* columnar stuff */
   .column,
-  .columns {
+  .columns,
+  [class*='col-'] {
     float: left;
     margin: 0 0 2rem 0;
     padding: 0 1rem;
   }
-  .group {
+  [class*='col-'] {
+    margin: 0;
+  }
+  .group,
+  .inner {
     margin: 0 -1rem 2rem -1rem;
+  }
+  .form-group {
+    margin: 0 -1rem;
   }
   .one {
     width: calc(8.33333333%);
@@ -329,7 +350,8 @@ sub {
   .two {
     width: calc(16.66666667%);
   }
-  .three {
+  .three,
+  .col-sm-3 {
     width: calc(25%);
   }
   .four {
@@ -348,7 +370,8 @@ sub {
   .eight {
     width: calc(66.66666667%);
   }
-  .nine {
+  .nine,
+  .col-sm-9 {
     width: calc(75%);
   }
   .ten {
@@ -909,9 +932,6 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal;
-}
-label {
-  display: none;
 }
 /* Help Text */
 .help-block {
