@@ -461,7 +461,6 @@ header h1 {
 }
 footer {
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
   margin: 2rem 0;
   padding: 1rem 0;
   text-align: center;
@@ -712,6 +711,7 @@ header nav h2.title {
 /* Footer Blocks
 ========================================================================================= */
 footer p {
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 footer div.socialmedia ul#sociallinks {
