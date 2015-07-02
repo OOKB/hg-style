@@ -261,7 +261,8 @@ sub {
 .show {
   display: block !important;
 }
-.hidden {
+.hidden,
+[for="url-355711833"] {
   display: none !important;
 }
 .invisible {
@@ -384,40 +385,40 @@ sub {
   .fullwidth {
     width: calc(100%);
   }
-  .offset-one {
+  .offset-by-one {
     margin-left: calc(8.33333333%);
   }
-  .offset-two {
+  .offset-by-two {
     margin-left: calc(16.66666667%);
   }
-  .offset-three {
+  .offset-by-three {
     margin-left: calc(25%);
   }
-  .offset-four {
+  .offset-by-four {
     margin-left: calc(33.33333333%);
   }
-  .offset-five {
+  .offset-by-five {
     margin-left: calc(41.66666667%);
   }
-  .offset-six {
+  .offset-by-six {
     margin-left: calc(50%);
   }
-  .offset-seven {
+  .offset-by-seven {
     margin-left: calc(58.33333333%);
   }
-  .offset-eight {
+  .offset-by-eight {
     margin-left: calc(66.66666667%);
   }
-  .offset-nine {
+  .offset-by-nine {
     margin-left: calc(75%);
   }
-  .offset-ten {
+  .offset-by-ten {
     margin-left: calc(83.33333333%);
   }
-  .offset-eleven {
+  .offset-by-eleven {
     margin-left: calc(91.66666667%);
   }
-  .offset-twelve {
+  .offset-by-twelve {
     margin-left: calc(100%);
   }
 }
@@ -431,6 +432,32 @@ body {
 }
 header {
   text-align: center;
+}
+header h1 {
+  background: transparent url('https://scontent.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/p320x320/538187_482862191773804_1305910322_n.jpg?oh=d981e77344e32d84b5f825263c5d93cc&oe=55ED90EF') center center no-repeat;
+  background-size: contain;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+  max-width: 320px;
+  min-height: 100px;
+  height: 80%;
+  max-height: 320px;
+  margin: 0 auto;
+}
+@media (min-width: 50em) {
+  header h1 {
+    background: transparent url('/theme/logo.png') center center no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 111px;
+    margin: 0 auto;
+    min-height: none;
+    min-width: none;
+    max-height: none;
+    max-width: none;
+  }
 }
 footer {
   border-top: 1px solid black;
@@ -733,32 +760,6 @@ ul#sociallinks li.insta a {
 /* -----------------------------------------------------*/
 /* ---------------->>> /END hg.less <<<-----------------*/
 /* -----------------------------------------------------*/
-header h1 {
-  background: transparent url('https://scontent.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/p320x320/538187_482862191773804_1305910322_n.jpg?oh=d981e77344e32d84b5f825263c5d93cc&oe=55ED90EF') center center no-repeat;
-  background-size: contain;
-  text-indent: 101%;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 80%;
-  max-width: 320px;
-  min-height: 100px;
-  height: 80%;
-  max-height: 320px;
-  margin: 0 auto;
-}
-@media (min-width: 50em) {
-  header h1 {
-    background: transparent url('/theme/logo.png') center center no-repeat;
-    background-size: contain;
-    width: 80%;
-    height: 111px;
-    margin: 0 auto;
-    min-height: none;
-    min-width: none;
-    max-height: none;
-    max-width: none;
-  }
-}
 /**
   This is compiled from best practices and interesting ideas via the following:
     - https://css-tricks.com/tips-for-creating-great-web-forms/
@@ -794,6 +795,12 @@ fieldset .message #form-url {
   width: 100%;
   max-width: 100%;
   margin-bottom: .25em;
+}
+#contact form button[type="submit"] {
+  margin: 0 1em;
+  margin-left: calc(26%);
+  width: calc(74%);
+  float: left;
 }
 form .group .group {
   margin: 0;
@@ -1108,6 +1115,6 @@ input[type="radio"] {
 }
 .form-control-feedback {
   position: absolute;
-  right: -1.5em;
-  top: 1em;
+  right: 1.5em;
+  top: .44em;
 }

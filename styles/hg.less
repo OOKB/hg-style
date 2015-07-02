@@ -34,7 +34,8 @@
 .show {
   display: block !important;
 }
-.hidden {
+.hidden,
+[for="url-355711833"] {
   display: none !important;
 }
 .invisible {
@@ -163,40 +164,40 @@
   .fullwidth {
     width: calc(100% / 12 * 12);
   }
-  .offset-one {
+  .offset-by-one {
     margin-left: calc(100% / 12 * 01);
   }
-  .offset-two {
+  .offset-by-two {
     margin-left: calc(100% / 12 * 02);
   }
-  .offset-three {
+  .offset-by-three {
     margin-left: calc(100% / 12 * 03);
   }
-  .offset-four {
+  .offset-by-four {
     margin-left: calc(100% / 12 * 04);
   }
-  .offset-five {
+  .offset-by-five {
     margin-left: calc(100% / 12 * 05);
   }
-  .offset-six {
+  .offset-by-six {
     margin-left: calc(100% / 12 * 06);
   }
-  .offset-seven {
+  .offset-by-seven {
     margin-left: calc(100% / 12 * 07);
   }
-  .offset-eight {
+  .offset-by-eight {
     margin-left: calc(100% / 12 * 08);
   }
-  .offset-nine {
+  .offset-by-nine {
     margin-left: calc(100% / 12 * 09);
   }
-  .offset-ten {
+  .offset-by-ten {
     margin-left: calc(100% / 12 * 10);
   }
-  .offset-eleven {
+  .offset-by-eleven {
     margin-left: calc(100% / 12 * 11);
   }
-  .offset-twelve {
+  .offset-by-twelve {
     margin-left: calc(100% / 12 * 12);
   }
 }
@@ -212,6 +213,34 @@ body {
 
 header {
   text-align: center;
+}
+
+header h1 {
+    background: transparent url('https://scontent.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/p320x320/538187_482862191773804_1305910322_n.jpg?oh=d981e77344e32d84b5f825263c5d93cc&oe=55ED90EF') center center no-repeat;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    max-width: 320px;
+    min-height: 100px;
+    height: 80%;
+    max-height: 320px;
+    margin: 0 auto;
+}
+
+@media (min-width: 50em) {
+  header h1 {
+    background: transparent url('/theme/logo.png') center center no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 111px;
+    margin: 0 auto;
+    min-height: none;
+    min-width: none;
+    max-height: none;
+    max-width: none;
+  }
 }
 
 footer {
